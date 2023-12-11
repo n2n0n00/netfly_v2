@@ -32,3 +32,9 @@ export interface CItems {
   type: string;
   styles: string;
 }
+
+export interface IShowCase {
+  title_1?: string;
+  title_2?: string;
+  items?: CItem;
+}
