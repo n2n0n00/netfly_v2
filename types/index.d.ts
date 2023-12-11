@@ -1,0 +1,27 @@
+import Slider, { Settings } from "@types/react-slick";
+
+declare module "react-slick" {
+  export { Slider, Settings };
+}
+
+export interface NavLink {
+  imgURL?: string;
+  route: string;
+  label: string;
+}
+
+export interface Pages {
+  imgURL?: string;
+  route: string;
+  label: string;
+}
+
+export interface Icons {
+  imgURL: string;
+  label?: number | string;
+  alt: string;
+}
+
+export interface SearchParamsProps {
+  searchParams: { [key: string]: string | undefined };
+}

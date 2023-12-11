@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .logo {
+    @apply text-[37.5px] font-normal leading-normal;
+  }
+
+  .h1 {
+    @apply text-[72px] font-bold leading-[82px];
+  }
+
+  .h2 {
+    @apply text-[64px] font-bold leading-[74px];
+  }
+  /* page titles */
+  .h3 {
+    @apply text-[48px] font-bold leading-[58px];
+  }
+
+  .h4 {
+    @apply text-[28px] font-bold leading-[38px];
+  }
+
+  .h5 {
+    @apply text-[24px] font-semibold leading-[34px];
+  }
+
+  .p1 {
+    @apply text-[24px] font-normal leading-[34px];
+  }
+
+  .p2 {
+    @apply text-[16px] font-normal leading-[26px];
+  }
+
+  .dark_blue {
+    @apply bg-[#172639];
+  }
+
+  .dark_blue_search {
+    @apply bg-[#1b3557];
+  }
+
+  .light_red {
+    @apply bg-[#E5084A];
+  }
+
+  .red_text {
+    @apply text-[#E5084A];
+  }
+
+  .red_btn {
+    @apply px-[14px] py-[10px] flex justify-center gap-[10px] light_red rounded-md;
+  }
+
+  .trans_btn {
+    @apply px-[14px] py-[24px] flex justify-center items-center gap-[10px] rounded-[5px] bg-transparent border-white border-[5px];
+  }
+
+  .white_btn {
+    @apply flex px-[10px] py-[4px] justify-center items-center gap-[10px] rounded-[4px] bg-white;
+  }
+
+  .red_btn_sm {
+    @apply px-[4px] py-[16px] flex justify-center gap-[10px] light_red border-[5px];
+  }
+}
