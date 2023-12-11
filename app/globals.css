@@ -22,6 +22,10 @@
     @apply flex justify-start items-start;
   }
 
+  .flex-end {
+    @apply flex justify-end items-end;
+  }
+
   .gradient_bg {
     background: rgb(23, 38, 57);
     background: -moz-linear-gradient(
@@ -52,5 +56,9 @@
   .no-scrollbar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+  }
+
+  .border_radius {
+    border-radius: 10px 0px;
   }
 }
