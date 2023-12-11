@@ -25,3 +25,10 @@ export interface Icons {
 export interface SearchParamsProps {
   searchParams: { [key: string]: string | undefined };
 }
+
+export interface CItems {
+  title: string;
+  length: string;
+  type: string;
+  styles: string;
+}

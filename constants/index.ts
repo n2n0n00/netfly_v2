@@ -1,4 +1,4 @@
-import { Pages, NavLink, Icons } from "@/types";
+import { Pages, NavLink, Icons, CItems } from "@/types";
 import { calendar, star, clock, subtitles } from "../public/index";
 
 export const NavLinks: NavLink[] = [
@@ -51,5 +51,44 @@ export const icons: Icons[] = [
   {
     imgURL: subtitles,
     alt: "subtitle",
+  },
+];
+
+export const CarouselItems: CItems[] = [
+  {
+    title: "The Shawshank Redemption",
+    type: "Season 1",
+    length: "16 Episodes",
+    styles: "w-[250px] h-[150px] bg-black",
+  },
+  {
+    title: "The Shawshank Redemption",
+    type: "Season 1",
+    length: "16 Episodes",
+    styles: "w-[250px] h-[150px] bg-black",
+  },
+  {
+    title: "The Shawshank Redemption",
+    type: "Season 1",
+    length: "16 Episodes",
+    styles: "w-[250px] h-[150px] bg-black",
+  },
+  {
+    title: "The Shawshank Redemption",
+    type: "Season 1",
+    length: "16 Episodes",
+    styles: "w-[250px] h-[150px] bg-black",
+  },
+  {
+    title: "The Shawshank Redemption",
+    type: "Season 1",
+    length: "16 Episodes",
+    styles: "w-[250px] h-[150px] bg-black",
+  },
+  {
+    title: "The Shawshank Redemption",
+    type: "Season 1",
+    length: "16 Episodes",
+    styles: "w-[250px] h-[150px] bg-black",
   },
 ];
