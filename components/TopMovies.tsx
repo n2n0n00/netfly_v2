@@ -28,10 +28,12 @@ const MovieCard = ({ number, ranking, title }: any) => (
 const TopMovies = () => {
   return (
     <div className="w-full flex-center flex-col">
+      <h3 className="h3 font-redHatDisplay text-white mb-20">Top Six Movies</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-5 m-5 xl:grid-cols-3">
         {topMovies.map((item) => (
           <MovieCard key={item.title} {...item} />
         ))}
+        h
       </div>
     </div>
   );

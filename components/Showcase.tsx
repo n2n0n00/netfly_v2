@@ -3,10 +3,10 @@ import Carousel from "./Carousel";
 import { IShowCase } from "@/types";
 import { showCase } from "@/constants";
 
-const Showcase = ({ title_1, title_2, items }: IShowCase) => {
+const Showcase = ({ data }: IShowCase) => {
   return (
     <div className="flex-center flex-col gap-20">
-      {showCase.map((item) => (
+      {data.map((item) => (
         <div
           key={item.title_1}
           className="m-3 flex-center flex-col gap-5 md:flex-start md:mx-10 gap-"

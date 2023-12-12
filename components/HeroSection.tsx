@@ -35,7 +35,7 @@ const HeroSection = async () => {
         height: "100%",
       }}
     >
-      <div className="gradient_bg gap-10 flex flex-col mb-[10%]">
+      <div className="gradient_bg gap-10 flex flex-col mb-[5%]">
         <Navbar />
         <div className="">
           <div className="flex-start flex-col ">

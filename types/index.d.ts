@@ -37,4 +37,5 @@ export interface IShowCase {
   title_1?: string;
   title_2?: string;
   items?: CItem;
+  data?: Array;
 }
