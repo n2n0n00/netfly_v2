@@ -38,7 +38,7 @@ export async function fetchPopularFilm() {
 
     const data = await response.json();
 
-    const result = data.results[0];
+    const result = data.results[3];
 
     return result;
 
@@ -100,4 +100,22 @@ export function getGenreNames(
     .filter((name) => name !== undefined) as string[];
 
   return genreNames;
+}
+
+export async function fetchNewRelease() {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.results;
+    console.log(result);
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
 }

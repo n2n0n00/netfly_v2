@@ -4,9 +4,13 @@
 
 @import url("../styles/theme.css");
 
+html {
+  font-size: 12px;
+}
+
 :root {
   overflow-x: hidden;
-  font-size: 12px;
+  @apply font-inter;
 }
 
 @layer utilities {

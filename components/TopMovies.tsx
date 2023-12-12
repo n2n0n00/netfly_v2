@@ -33,7 +33,6 @@ const TopMovies = () => {
         {topMovies.map((item) => (
           <MovieCard key={item.title} {...item} />
         ))}
-        h
       </div>
     </div>
   );

@@ -29,9 +29,11 @@ const Banner = async ({ stylesOuter, stylesInner }: any) => {
         }}
       >
         <div
-          className={`gradient_bg_rounded justify-center gap-10 flex flex-col ${stylesOuter}`}
+          className={`gradient_bg_rounded justify-center gap-10 max-sm:gap-2 flex flex-col  ${stylesOuter}`}
         >
-          <div className={`flex-start flex-col mt-10 ${stylesInner}`}>
+          <div
+            className={`flex-start flex-col md:mt-20 max-sm:mt-[20%] ${stylesInner}`}
+          >
             <div className="flex-start gap-5 m-3 md:mx-20">
               <MovieMetrics img={calendar} prop={popularMovies.release_date} />
               <MovieMetrics
@@ -42,7 +44,7 @@ const Banner = async ({ stylesOuter, stylesInner }: any) => {
             </div>
 
             {/* title of the movie will go here */}
-            <div className="m-3 flex-start md:mx-20">
+            <div className="m-3 max-sm:mt-0 flex-start md:mx-20">
               <h2 className="h2 text-white font-redHatDisplay">
                 {popularMovies.title}
               </h2>
@@ -60,7 +62,7 @@ const Banner = async ({ stylesOuter, stylesInner }: any) => {
 
           {/* description of the movie will go here */}
           <div className="flex-start flex-col gap-5 m-3 md:mx-20 lg:w-[50%]">
-            <p className="text-white p2 text-justify font-inter">
+            <p className="text-white p2 max-xs:p3 text-justify font-inter">
               {popularMovies.overview}
             </p>
             <div className="red_btn mb-20">
