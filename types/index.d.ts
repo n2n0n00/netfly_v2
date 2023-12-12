@@ -37,5 +37,14 @@ export interface IShowCase {
   title_1?: string;
   title_2?: string;
   items?: CItem;
-  data?: Array;
+  data?: {
+    title_1?: string;
+    title_2?: string;
+  }[];
+  carouselItems?: {
+    poster_path?: string;
+    title?: string;
+    vote_count?: number;
+    vote_average?: number;
+  }[];
 }

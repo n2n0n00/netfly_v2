@@ -95,35 +95,44 @@ export const CarouselItems: CItems[] = [
 
 export const showCase1: IShowCase[] = [
   {
-    title_1: "New Release",
-    title_2: "This Week",
-  },
-  {
-    title_1: "Popular",
-    title_2: "TV Shows",
+    title_1: "Upcoming",
+    title_2: "Movies",
   },
 ];
 
 export const showCase2: IShowCase[] = [
   {
+    title_1: "Popular",
+    title_2: "TV Shows",
+  },
+];
+export const showCase3: IShowCase[] = [
+  {
     title_1: "Romantic Series for",
     title_2: "Valentine's Day",
   },
 ];
-
-export const showCase3: IShowCase[] = [
+export const showCase4: IShowCase[] = [
   {
     title_1: "Latest",
     title_2: "Movies",
   },
+];
+
+export const showCase5: IShowCase[] = [
   {
     title_1: "Recommended",
     title_2: "Movies",
   },
+];
+export const showCase6: IShowCase[] = [
   {
     title_1: "Continue",
     title_2: "Watching",
   },
+];
+
+export const showCase7: IShowCase[] = [
   {
     title_1: "Watch",
     title_2: "Again",

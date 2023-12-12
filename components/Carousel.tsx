@@ -1,10 +1,10 @@
 "use client";
 
-import { CarouselItems } from "@/constants";
+import { IShowCase } from "@/types";
 import React, { useRef } from "react";
 import { PiArrowSquareLeft, PiArrowSquareRight } from "react-icons/pi";
 
-const Carousel = () => {
+const Carousel = ({ carouselItems }: IShowCase) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const scroll = (direction: "left" | "right") => {
@@ -29,20 +29,25 @@ const Carousel = () => {
         />
       </div>
       <div
-        className="flex-center flex-row w-[90vw] gap-5 overflow-x-scroll no-scrollbar"
+        className="flex flex-row w-[90vw] gap-5 overflow-x-scroll no-scrollbar"
         ref={scrollRef}
       >
-        <div></div>
-        {CarouselItems.map((item) => (
+        {carouselItems?.map((item: any) => (
           <div key={item.title} className="flex-start flex-col gap-1">
-            <div className="w-[250px] h-[150px] bg-black"></div>
+            <div
+              className="w-[250px] h-[300px]"
+              style={{
+                backgroundImage: `url(https://image.tmdb.org/t/p/original/${item.poster_path})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            ></div>
             <p className="text-white opacity-50 p2 font-inter">
-              {item.type}&nbsp; | &nbsp;{item.length}
+              Votes: {item.vote_count}&nbsp; | &nbsp;Rating: {item.vote_average}
             </p>
             <p className="p2 font-inter text-white">{item.title}</p>
           </div>
         ))}
-        <div></div>
       </div>
       <div className="flex flex-row gap-10 max-md:mt-5">
         <div className="z-50 -mr-5 hidden max-md:block">
