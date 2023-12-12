@@ -102,40 +102,40 @@ export const showCase1: IShowCase[] = [
 
 export const showCase2: IShowCase[] = [
   {
-    title_1: "Popular",
-    title_2: "TV Shows",
+    title_1: "Discover",
+    title_2: "Movies",
   },
 ];
 export const showCase3: IShowCase[] = [
   {
-    title_1: "Romantic Series for",
-    title_2: "Valentine's Day",
+    title_1: "Discover",
+    title_2: "TV Shows",
   },
 ];
 export const showCase4: IShowCase[] = [
   {
-    title_1: "Latest",
-    title_2: "Movies",
+    title_1: "Top Rated",
+    title_2: "TV Shows",
   },
 ];
 
 export const showCase5: IShowCase[] = [
   {
-    title_1: "Recommended",
+    title_1: "Now Playing",
     title_2: "Movies",
   },
 ];
 export const showCase6: IShowCase[] = [
   {
-    title_1: "Continue",
-    title_2: "Watching",
+    title_1: "Top Rated",
+    title_2: "Movies",
   },
 ];
 
 export const showCase7: IShowCase[] = [
   {
-    title_1: "Watch",
-    title_2: "Again",
+    title_1: "On The",
+    title_2: "Air TV",
   },
 ];
 

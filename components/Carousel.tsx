@@ -45,7 +45,10 @@ const Carousel = ({ carouselItems }: IShowCase) => {
             <p className="text-white opacity-50 p2 font-inter">
               Votes: {item.vote_count}&nbsp; | &nbsp;Rating: {item.vote_average}
             </p>
-            <p className="p2 font-inter text-white">{item.title}</p>
+            <p className="p2 font-inter text-white">
+              {item.title}
+              {item.name}
+            </p>
           </div>
         ))}
       </div>

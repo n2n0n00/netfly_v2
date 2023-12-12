@@ -111,7 +111,142 @@ export async function fetchNewRelease() {
     const data = await response.json();
 
     const result = data.results;
-    console.log(result);
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function fetchDiscoverMovies() {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.results;
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function fetchDiscoverTV() {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.results;
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function fetchTopRatedTV() {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.results;
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function fetchTopRatedMovies() {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.results;
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function fetchNowPlayingMovies() {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.results;
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function fetchOnAirTV() {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/tv/on_the_air?language=en-US&page=1&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.results;
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function fetchTrendingMovie() {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.results[0];
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function fetchTrendingTV() {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/trending/tv/day?language=en-US&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.results[0];
     return result;
 
     //

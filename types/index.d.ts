@@ -44,6 +44,7 @@ export interface IShowCase {
   carouselItems?: {
     poster_path?: string;
     title?: string;
+    name?: string;
     vote_count?: number;
     vote_average?: number;
   }[];

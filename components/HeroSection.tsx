@@ -12,7 +12,7 @@ import Navbar from "@/components/navigation/Navbar";
 export const MovieMetrics = ({ prop, img }: any) => (
   <div className="flex-center flex-row gap-2">
     <Image src={img} alt="calendar" width={15} height={15} />
-    <p className="p2 text-white uppercase">{prop}</p>
+    <p className="p2 text-white uppercase">{prop ? prop : "Not Disclosed"}</p>
   </div>
 );
 
@@ -38,7 +38,7 @@ const HeroSection = async () => {
       <div className="gradient_bg gap-10 flex flex-col mb-[5%]">
         <Navbar />
         <div className="">
-          <div className="flex-start flex-col ">
+          <div className="flex-start flex-col">
             <div className="flex-start gap-5 m-3 md:mx-20">
               <MovieMetrics img={calendar} prop={popularMovies.release_date} />
               <MovieMetrics
