@@ -48,6 +48,29 @@
     height: 100%;
   }
 
+  .gradient_bg_rounded {
+    background: rgb(23, 38, 57);
+    background: -moz-linear-gradient(
+      0deg,
+      rgba(23, 38, 57, 1) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(23, 38, 57, 1) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+    background: linear-gradient(
+      0deg,
+      rgba(23, 38, 57, 1) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#172639",endColorstr="#ffffff",GradientType=1);
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+  }
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }

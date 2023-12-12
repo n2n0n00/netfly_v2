@@ -1,22 +1,14 @@
+import { calendar, subtitles, star } from "@/public";
+import React from "react";
+import { MovieMetrics } from "./HeroSection";
 import {
   GenreData,
   fetchPopularFilm,
   getGenreList,
   getGenreNames,
 } from "@/lib/utils";
-import Image from "next/image";
-import React from "react";
-import { calendar, subtitles, star } from "../public/index";
-import Navbar from "@/components/navigation/Navbar";
 
-export const MovieMetrics = ({ prop, img }: any) => (
-  <div className="flex-center flex-row gap-2">
-    <Image src={img} alt="calendar" width={15} height={15} />
-    <p className="p2 text-white uppercase">{prop}</p>
-  </div>
-);
-
-const HeroSection = async () => {
+const Banner = async ({ stylesOuter, stylesInner }: any) => {
   const popularMovies = await fetchPopularFilm();
   const genresList: GenreData = await getGenreList();
   const movieGenres: number[] = popularMovies.genre_ids;
@@ -24,21 +16,22 @@ const HeroSection = async () => {
   const poster = popularMovies.poster_path;
 
   const genres: string[] = getGenreNames(genresList, movieGenres);
-
   return (
-    <section
-      className="w-full"
-      style={{
-        backgroundImage: `url(https://image.tmdb.org/t/p/original/${poster})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100%",
-      }}
-    >
-      <div className="gradient_bg gap-10 flex flex-col mb-[10%]">
-        <Navbar />
-        <div className="">
-          <div className="flex-start flex-col ">
+    <section className="flex-center flex-col w-full h-[80vh] my-12">
+      <div
+        className="w-[90%] relative"
+        style={{
+          backgroundImage: `url(https://image.tmdb.org/t/p/original/${poster})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "100%",
+          borderRadius: "50px",
+        }}
+      >
+        <div
+          className={`gradient_bg_rounded justify-center gap-10 flex flex-col ${stylesOuter}`}
+        >
+          <div className={`flex-start flex-col mt-10 ${stylesInner}`}>
             <div className="flex-start gap-5 m-3 md:mx-20">
               <MovieMetrics img={calendar} prop={popularMovies.release_date} />
               <MovieMetrics
@@ -67,7 +60,7 @@ const HeroSection = async () => {
 
           {/* description of the movie will go here */}
           <div className="flex-start flex-col gap-5 m-3 md:mx-20 lg:w-[50%]">
-            <p className="text-white p1 max-md:p2 text-justify font-inter">
+            <p className="text-white p2 text-justify font-inter">
               {popularMovies.overview}
             </p>
             <div className="red_btn mb-20">
@@ -80,4 +73,4 @@ const HeroSection = async () => {
   );
 };
 
-export default HeroSection;
+export default Banner;
