@@ -171,3 +171,26 @@ export const topMovies = [
     title: "The Shawshank Redemption",
   },
 ];
+
+export const detailsData = [
+  {
+    label: "Genre",
+    value: "Drama, Crime",
+  },
+  {
+    label: "Rating",
+    value: "4.8/5",
+  },
+  {
+    label: "Maturity Rating",
+    value: "PG-13",
+  },
+  {
+    label: "Duration",
+    value: "2h 28m",
+  },
+  {
+    label: "Year",
+    value: "2021",
+  },
+];

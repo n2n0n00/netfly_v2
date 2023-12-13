@@ -20,7 +20,7 @@ const DetailsHero = async ({ prop, img }: any) => {
     >
       <div className="gradient_bg gap-10 flex flex-col mb-[5%]">
         <Navbar />
-        <div className="">
+        <div className="h-[100vh] flex flex-col justify-end">
           <div className="flex justify-end flex-col">
             <div className="m-3 flex-start md:mx-20">
               <h2 className="h2 text-white font-redHatDisplay">
