@@ -139,6 +139,13 @@ export const showCase7: IShowCase[] = [
   },
 ];
 
+export const showCase8: IShowCase[] = [
+  {
+    title_1: "Similar",
+    title_2: "Movies",
+  },
+];
+
 export const topMovies = [
   {
     number: "01",

@@ -272,3 +272,20 @@ export async function fetchMovieByID() {
     console.log(error);
   }
 }
+
+export async function fetchSimilarMovieByID() {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/466420/recommendations?language=en-US&page=1&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.results;
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
