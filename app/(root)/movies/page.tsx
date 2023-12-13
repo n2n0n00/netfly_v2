@@ -1,7 +1,12 @@
+import DetailsHero from "@/components/DetailsHero";
 import React from "react";
 
 const Movies = () => {
-  return <div>Movies</div>;
+  return (
+    <div>
+      <DetailsHero />
+    </div>
+  );
 };
 
 export default Movies;

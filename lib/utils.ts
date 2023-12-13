@@ -254,3 +254,21 @@ export async function fetchTrendingTV() {
     console.log(error);
   }
 }
+
+export async function fetchMovieByID() {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/466420?language=en-US&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data;
+
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
