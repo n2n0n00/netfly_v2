@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useRef } from "react";
 import { PiArrowSquareLeft, PiArrowSquareRight } from "react-icons/pi";
 
-const Carousel = ({ carouselItems }: IShowCase) => {
+const DetailsCarousel = ({ carouselItems }: IShowCase) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const scroll = (direction: "left" | "right") => {
@@ -34,7 +34,7 @@ const Carousel = ({ carouselItems }: IShowCase) => {
         ref={scrollRef}
       >
         {carouselItems?.map((item: any) => (
-          <Link href={`movies/${item.id}`} key={item.title}>
+          <Link href={`${item.id}`} key={item.title}>
             <div className="flex-start flex-col gap-1">
               <div
                 className="w-[250px] h-[300px]"
@@ -76,4 +76,4 @@ const Carousel = ({ carouselItems }: IShowCase) => {
   );
 };
 
-export default Carousel;
+export default DetailsCarousel;

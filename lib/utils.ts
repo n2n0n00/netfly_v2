@@ -1,5 +1,5 @@
-import page from "@/app/(root)/(home)/page";
 import { type ClassValue, clsx } from "clsx";
+import { usePathname } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -29,7 +29,7 @@ export async function fetchPopularFilm() {
     const data = await response.json();
 
     const result = [data.results[0]];
-    console.log(result);
+
     return result;
 
     //
@@ -252,18 +252,21 @@ export async function fetchTrendingTV() {
   }
 }
 
-const movieId = 466420;
+// const movieId = 466420;
+export interface movieIdProp {
+  id: number;
+}
 
-export async function fetchMovieByID() {
+export async function fetchMovieByID({ id }: movieIdProp) {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=${tmdbApiKey}`
+      `https://api.themoviedb.org/3/movie/${id}?language=en-US&api_key=${tmdbApiKey}`
     );
 
     const data = await response.json();
 
     const result = data;
-
+    console.log(result);
     return result;
 
     //
@@ -272,19 +275,36 @@ export async function fetchMovieByID() {
   }
 }
 
-export async function fetchSimilarMovieByID() {
+export async function fetchSimilarMovieByID({ id }: movieIdProp) {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}/recommendations?language=en-US&page=1&api_key=${tmdbApiKey}`
+      `https://api.themoviedb.org/3/movie/${id}/recommendations?language=en-US&page=1&api_key=${tmdbApiKey}`
     );
 
     const data = await response.json();
 
     const result = data.results;
+    console.log(result);
     return result;
 
     //
   } catch (error) {
     console.log(error);
   }
+}
+
+export async function getServerSideProps() {
+  const searchParams = window.location.href;
+  const parts = searchParams.split("/");
+  const movieId = { id: parseInt(parts[parts.length - 1]) };
+
+  const fetchedSimilarMovies = await fetchSimilarMovieByID(movieId);
+  const fetchedMovieDetails = await fetchMovieByID(movieId);
+
+  return {
+    props: {
+      fetchedMovieDetails,
+      fetchedSimilarMovies,
+    },
+  };
 }

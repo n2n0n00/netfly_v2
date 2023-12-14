@@ -60,10 +60,27 @@ export interface IAPIDataCall {
     vote_average?: number;
     overview?: string;
     id?: string;
-    genreIds: string;
+    genreIds?: string;
     original_language?: string;
     runtime?: number;
     release_date?: string;
   }[];
+  genres?: string[];
+}
+
+export interface IAPIDataCall2 {
+  carouselItems?: {
+    poster_path?: string;
+    title?: string;
+    name?: string;
+    vote_count?: number;
+    vote_average?: number;
+    overview?: string;
+    id?: string;
+    genreIds?: string;
+    original_language?: string;
+    runtime?: number;
+    release_date?: string;
+  };
   genres?: string[];
 }
