@@ -4,7 +4,7 @@ import { fetchMovieByID } from "@/lib/utils";
 import { calendar, clock, star, subtitles } from "@/public";
 import { MovieMetrics } from "./HeroSection";
 
-const DetailsHero = async ({ prop, img }: any) => {
+const DetailsHero = async () => {
   const movieByID = await fetchMovieByID();
   const poster = movieByID.poster_path;
 

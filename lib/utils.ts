@@ -22,24 +22,31 @@ export interface MovieProps {
 
 export async function fetchPopularFilm() {
   try {
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MmY5ZTQ1NzA4ODZlMzRmMTQ4N2ViOTcxNTRiYTVhMyIsInN1YiI6IjY1NmY4ZDg5NDZlNzVmMDBlM2QzMWJlMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r3uAYVZT10bqG-bT1l3CEWfuRM0KZWKcfPGdyMQ9_xk",
-      },
-    };
-
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?page=1&api_key=${tmdbApiKey}`,
-      options
+      `https://api.themoviedb.org/3/movie/popular?page=1&api_key=${tmdbApiKey}`
     );
 
     const data = await response.json();
 
-    const result = data.results[3];
+    const result = [data.results[0]];
+    console.log(result);
+    return result;
 
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function fetchPopularFilmGenres() {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/popular?page=1&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.results[0];
     return result;
 
     //
@@ -50,18 +57,8 @@ export async function fetchPopularFilm() {
 
 export async function getGenreList() {
   try {
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MmY5ZTQ1NzA4ODZlMzRmMTQ4N2ViOTcxNTRiYTVhMyIsInN1YiI6IjY1NmY4ZDg5NDZlNzVmMDBlM2QzMWJlMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r3uAYVZT10bqG-bT1l3CEWfuRM0KZWKcfPGdyMQ9_xk",
-      },
-    };
-
     const response = fetch(
-      `https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=${tmdbApiKey}`,
-      options
+      `https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=${tmdbApiKey}`
     );
 
     const data = (await response).json();
@@ -255,10 +252,12 @@ export async function fetchTrendingTV() {
   }
 }
 
+const movieId = 466420;
+
 export async function fetchMovieByID() {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/466420?language=en-US&api_key=${tmdbApiKey}`
+      `https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=${tmdbApiKey}`
     );
 
     const data = await response.json();
@@ -276,7 +275,7 @@ export async function fetchMovieByID() {
 export async function fetchSimilarMovieByID() {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/466420/recommendations?language=en-US&page=1&api_key=${tmdbApiKey}`
+      `https://api.themoviedb.org/3/movie/${movieId}/recommendations?language=en-US&page=1&api_key=${tmdbApiKey}`
     );
 
     const data = await response.json();

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-async-client-component */
 import DetailsHero from "@/components/DetailsHero";
 import DetailsSection from "@/components/DetailsSection";
 import Showcase from "@/components/Showcase";

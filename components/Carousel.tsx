@@ -1,6 +1,7 @@
 "use client";
 
 import { IShowCase } from "@/types";
+import Link from "next/link";
 import React, { useRef } from "react";
 import { PiArrowSquareLeft, PiArrowSquareRight } from "react-icons/pi";
 
@@ -33,23 +34,26 @@ const Carousel = ({ carouselItems }: IShowCase) => {
         ref={scrollRef}
       >
         {carouselItems?.map((item: any) => (
-          <div key={item.title} className="flex-start flex-col gap-1">
-            <div
-              className="w-[250px] h-[300px]"
-              style={{
-                backgroundImage: `url(https://image.tmdb.org/t/p/original/${item.poster_path})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            ></div>
-            <p className="text-white opacity-50 p2 font-inter">
-              Votes: {item.vote_count}&nbsp; | &nbsp;Rating: {item.vote_average}
-            </p>
-            <p className="p2 font-inter text-white">
-              {item.title}
-              {item.name}
-            </p>
-          </div>
+          <Link href={`movies/${item.id}`} key={item.title}>
+            <div className="flex-start flex-col gap-1">
+              <div
+                className="w-[250px] h-[300px]"
+                style={{
+                  backgroundImage: `url(https://image.tmdb.org/t/p/original/${item.poster_path})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              ></div>
+              <p className="text-white opacity-50 p2 font-inter">
+                Votes: {item.vote_count}&nbsp; | &nbsp;Rating:{" "}
+                {item.vote_average}
+              </p>
+              <p className="p2 font-inter text-white">
+                {item.title}
+                {item.name}
+              </p>
+            </div>
+          </Link>
         ))}
       </div>
       <div className="flex flex-row gap-10 max-md:mt-5">

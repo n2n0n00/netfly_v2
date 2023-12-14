@@ -12,13 +12,18 @@ import {
   showCase7,
 } from "@/constants";
 import {
+  GenreData,
   fetchDiscoverMovies,
   fetchDiscoverTV,
   fetchNewRelease,
   fetchNowPlayingMovies,
   fetchOnAirTV,
+  fetchPopularFilm,
+  fetchPopularFilmGenres,
   fetchTopRatedMovies,
   fetchTopRatedTV,
+  getGenreList,
+  getGenreNames,
 } from "@/lib/utils";
 import React from "react";
 
@@ -31,9 +36,16 @@ const Home = async () => {
   const latestMovies = await fetchNowPlayingMovies();
   const onAirTV = await fetchOnAirTV();
 
+  const popularMovies = await fetchPopularFilm();
+  const genresList: GenreData = await getGenreList();
+  const popularMoviesObject = await fetchPopularFilmGenres();
+  const movieGenres: number[] = popularMoviesObject.genre_ids;
+
+  const genres: string[] = getGenreNames(genresList, movieGenres);
+
   return (
     <>
-      <HeroSection />
+      <HeroSection carouselItems={popularMovies} genres={genres} />
       <div className="flex-center flex-col gap-20">
         <div>
           <Showcase data={showCase1} carouselItems={newReleases} />
