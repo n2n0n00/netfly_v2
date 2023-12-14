@@ -1,5 +1,6 @@
 import { topMovies } from "@/constants";
 import { fetchTopRatedMovies } from "@/lib/utils";
+import Link from "next/link";
 import React from "react";
 
 const MovieCard = ({ number, ranking, title, poster_path }: any) => (
@@ -35,13 +36,14 @@ const TopMovies = async () => {
       <h3 className="h3 font-redHatDisplay text-white mb-20">Top Six Movies</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-5 m-5 xl:grid-cols-3">
         {firstSixMovies.map((item: any, index: any) => (
-          <MovieCard
-            key={item.title}
-            number={index + 1}
-            ranking={index + 1}
-            title={item.title}
-            poster_path={item.poster_path}
-          />
+          <Link key={item.title} href={`movies/${item.id}`}>
+            <MovieCard
+              number={index + 1}
+              ranking={index + 1}
+              title={item.title}
+              poster_path={item.poster_path}
+            />
+          </Link>
         ))}
       </div>
     </div>
