@@ -57,7 +57,7 @@ const Home = async () => {
           <Banner
             stylesOuter={"xl:items-end"}
             stylesInner={"xl:w-[60%]"}
-            category={"movie"}
+            category={"tv"}
           />
         </div>
         <div>
@@ -67,7 +67,7 @@ const Home = async () => {
           <Showcase data={showCase4} carouselItems={topTV} />
         </div>
         <div>
-          <Banner stylesOuter={""} stylesInner={""} category={"tv"} />
+          <Banner stylesOuter={""} stylesInner={""} category={"movie"} />
         </div>
         <div>
           <TopMovies />
