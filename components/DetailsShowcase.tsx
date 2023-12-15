@@ -2,7 +2,7 @@ import React from "react";
 import { IShowCase } from "@/types";
 import DetailsCarousel from "./DetailsCarousel";
 
-const DetailsShowcase = ({ carouselItems, data }: IShowCase) => {
+const DetailsShowcase = ({ carouselItems, data, category }: IShowCase) => {
   return (
     <div className="flex-center flex-col gap-20">
       {data?.map((item: any) => (
@@ -13,7 +13,7 @@ const DetailsShowcase = ({ carouselItems, data }: IShowCase) => {
           <p className="h3 text-white text-center md:ml-8">
             {item.title_1} <span className="h3 red_text">{item.title_2}</span>
           </p>
-          <DetailsCarousel carouselItems={carouselItems} />
+          <DetailsCarousel carouselItems={carouselItems} category={category} />
         </div>
       ))}
     </div>

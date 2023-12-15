@@ -35,6 +35,7 @@ export interface CItems {
 }
 
 export interface IShowCase {
+  category?: string;
   title_1?: string;
   title_2?: string;
   items?: CItem;
@@ -70,6 +71,7 @@ export interface IAPIDataCall {
 }
 
 export interface IMovieDetailsPage {
+  category?: string;
   carouselItems?: {
     poster_path?: string;
     title?: string;
@@ -82,11 +84,13 @@ export interface IMovieDetailsPage {
     original_language?: string;
     runtime?: number;
     release_date?: string;
+    first_air_date: string;
   };
   genres?: string[];
 }
 
 export interface IMovieDetailsPageSynopsis {
+  category?: string;
   carouselItems?: {
     poster_path?: string;
     title?: string;
@@ -100,6 +104,9 @@ export interface IMovieDetailsPageSynopsis {
     runtime?: number;
     release_date?: string;
     genres?: Genre[];
+    number_of_episodes?: number;
+    number_of_seasons?: number;
+    first_air_date?: string;
   };
   actors?: {
     name?: string;

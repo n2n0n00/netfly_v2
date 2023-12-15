@@ -61,10 +61,10 @@ const Home = async () => {
           />
         </div>
         <div>
-          <Showcase data={showCase3} carouselItems={discoverTV} />
+          <Showcase data={showCase3} carouselItems={discoverTV} category="tv" />
         </div>
         <div>
-          <Showcase data={showCase4} carouselItems={topTV} />
+          <Showcase data={showCase4} carouselItems={topTV} category="tv" />
         </div>
         <div>
           <Banner stylesOuter={""} stylesInner={""} category={"movie"} />
@@ -79,7 +79,7 @@ const Home = async () => {
           <Showcase data={showCase6} carouselItems={topMovies} />
         </div>
         <div>
-          <Showcase data={showCase7} carouselItems={onAirTV} />
+          <Showcase data={showCase7} carouselItems={onAirTV} category="tv" />
         </div>
       </div>
     </>

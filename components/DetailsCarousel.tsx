@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useRef } from "react";
 import { PiArrowSquareLeft, PiArrowSquareRight } from "react-icons/pi";
 
-const DetailsCarousel = ({ carouselItems }: IShowCase) => {
+const DetailsCarousel = ({ carouselItems, category }: IShowCase) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const scroll = (direction: "left" | "right") => {
@@ -49,8 +49,8 @@ const DetailsCarousel = ({ carouselItems }: IShowCase) => {
                 {item.vote_average}
               </p>
               <p className="p2 font-inter text-white">
-                {item.title}
-                {item.name}
+                {item?.title}
+                {item?.name}
               </p>
             </div>
           </Link>

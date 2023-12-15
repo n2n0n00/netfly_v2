@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useRef } from "react";
 import { PiArrowSquareLeft, PiArrowSquareRight } from "react-icons/pi";
 
-const Carousel = ({ carouselItems }: IShowCase) => {
+const Carousel = ({ carouselItems, category }: IShowCase) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const scroll = (direction: "left" | "right") => {
@@ -34,7 +34,12 @@ const Carousel = ({ carouselItems }: IShowCase) => {
         ref={scrollRef}
       >
         {carouselItems?.map((item: any) => (
-          <Link href={`movies/${item.id}`} key={item.title}>
+          <Link
+            href={
+              category === "tv" ? `tvshows/${item.id}` : `movies/${item.id}`
+            }
+            key={item.title}
+          >
             <div className="flex-start flex-col gap-1">
               <div
                 className="w-[250px] h-[300px]"
@@ -48,10 +53,11 @@ const Carousel = ({ carouselItems }: IShowCase) => {
                 Votes: {item.vote_count}&nbsp; | &nbsp;Rating:{" "}
                 {item.vote_average}
               </p>
-              <p className="p2 font-inter text-white">
-                {item.title}
-                {item.name}
-              </p>
+              {category === "tv" ? (
+                <p className="p2 font-inter text-white">{item.name}</p>
+              ) : (
+                <p className="p2 font-inter text-white">{item.title}</p>
+              )}
             </div>
           </Link>
         ))}

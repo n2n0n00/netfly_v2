@@ -5,7 +5,7 @@ import React from "react";
 
 const AboutData = ({ label, value }: any) => (
   <div className="flex flex-col gap-4">
-    <div className="flex-between flex-row xl:w-[60%] xl:gap-10">
+    <div className="flex items-start justify-between flex-row xl:w-[60%] xl:gap-10">
       <p className="p1 text-white opacity-50">{label}</p>
       <p className="p1 text-white opacity-50 text-right">{value}</p>
     </div>
@@ -31,6 +31,7 @@ const PersonBox = ({ actor, part, img }: any) => (
 
 const DetailsSection = ({
   carouselItems,
+  category,
   actors,
 }: IMovieDetailsPageSynopsis) => {
   const genresList = extractGenreNames(carouselItems?.genres);
@@ -40,19 +41,42 @@ const DetailsSection = ({
       <div className="w-full lg:w-[50%] flex gap-20 flex-col">
         <div className="flex flex-col gap-10">
           <h4 className="h4 text-white font-redHatDisplay">About</h4>
-          <div className="flex flex-col gap-4">
-            <AboutData label={"Genre"} value={genresList} />
-            <AboutData
-              label={"Rating"}
-              value={`${carouselItems?.vote_average}/10`}
-            />
-            <AboutData label={"Status"} value={carouselItems?.status} />
-            <AboutData label={"Duration"} value={carouselItems?.runtime} />
-            <AboutData
-              label={"Released On"}
-              value={carouselItems?.release_date}
-            />
-          </div>
+          {category === "tv" ? (
+            <div className="flex flex-col gap-4">
+              <AboutData label={"Genre"} value={genresList} />
+              <AboutData
+                label={"Rating"}
+                value={`${carouselItems?.vote_average}/10`}
+              />
+              <AboutData label={"Status"} value={carouselItems?.status} />
+              <AboutData
+                label={"Episodes"}
+                value={carouselItems?.number_of_episodes}
+              />
+              <AboutData
+                label={"Seasons"}
+                value={carouselItems?.number_of_seasons}
+              />
+              <AboutData
+                label={"Released On"}
+                value={carouselItems?.first_air_date}
+              />
+            </div>
+          ) : (
+            <div className="flex flex-col gap-4">
+              <AboutData label={"Genre"} value={genresList} />
+              <AboutData
+                label={"Rating"}
+                value={`${carouselItems?.vote_average}/10`}
+              />
+              <AboutData label={"Status"} value={carouselItems?.status} />
+              <AboutData label={"Duration"} value={carouselItems?.runtime} />
+              <AboutData
+                label={"Released On"}
+                value={carouselItems?.release_date}
+              />
+            </div>
+          )}
         </div>
         <div className="flex flex-col gap-10">
           <h4 className="h4 text-white font-redHatDisplay">Synopsis</h4>

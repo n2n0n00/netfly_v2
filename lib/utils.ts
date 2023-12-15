@@ -318,3 +318,57 @@ export async function fetchCreditsByMovieID({ id }: movieIdProp) {
     console.log(error);
   }
 }
+
+// FETCH REQUESTS FOR TV SHOWS DETAIL PAGE
+
+export async function fetchTVShowByID({ id }: movieIdProp) {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/tv/${id}?language=en-US&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data;
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function fetchSimilarTVShowByID({ id }: movieIdProp) {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/tv/${id}/recommendations?language=en-US&page=1&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.results;
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function fetchCreditsByTVShowID({ id }: movieIdProp) {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/tv/${id}/credits?api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.cast.slice(0, 5);
+    console.log(result);
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}

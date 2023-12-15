@@ -6,7 +6,7 @@ import { MovieMetrics } from "./HeroSection";
 
 import { IMovieDetailsPage } from "@/types";
 
-const DetailsHero = ({ carouselItems }: IMovieDetailsPage) => {
+const DetailsHero = ({ carouselItems, category }: IMovieDetailsPage) => {
   return (
     <>
       <section
@@ -24,22 +24,36 @@ const DetailsHero = ({ carouselItems }: IMovieDetailsPage) => {
           <div className="h-[100vh] flex flex-col justify-end">
             <div className="flex justify-end flex-col">
               <div className="m-3 flex-start md:mx-20">
-                <h2 className="h2 text-white font-redHatDisplay">
-                  {carouselItems?.title}
-                </h2>
+                {category === "tv" ? (
+                  <h2 className="h2 text-white font-redHatDisplay">
+                    {carouselItems?.name}
+                  </h2>
+                ) : (
+                  <h2 className="h2 text-white font-redHatDisplay">
+                    {carouselItems?.title}
+                  </h2>
+                )}
               </div>
 
               <div className="flex-start gap-5 m-3 md:mx-20">
                 <MovieMetrics
                   img={calendar}
-                  prop={carouselItems?.release_date}
+                  prop={
+                    category === "tv"
+                      ? carouselItems?.first_air_date
+                      : carouselItems?.release_date
+                  }
                 />
                 <MovieMetrics
                   img={subtitles}
                   prop={carouselItems?.original_language}
                 />
                 <MovieMetrics img={star} prop={carouselItems?.vote_average} />
-                <MovieMetrics img={clock} prop={carouselItems?.runtime} />
+                {category === "tv" ? (
+                  <></>
+                ) : (
+                  <MovieMetrics img={clock} prop={carouselItems?.runtime} />
+                )}
               </div>
             </div>
 

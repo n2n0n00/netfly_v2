@@ -9,7 +9,7 @@ import {
 } from "@/lib/utils";
 import { headers } from "next/dist/client/components/headers";
 
-const Movies = async () => {
+const MovieDetails = async () => {
   const _headers = headers();
   const currentUrl = _headers.get("x-url");
   const parts = currentUrl?.split("/");
@@ -31,4 +31,4 @@ const Movies = async () => {
   );
 };
 
-export default Movies;
+export default MovieDetails;
