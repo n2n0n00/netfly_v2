@@ -12,7 +12,7 @@
   }
 
   .h2 {
-    @apply text-[5rem] font-bold leading-[74px];
+    @apply text-[5rem] font-bold leading-[74px] max-[770px]:text-[4rem] max-[770px]:leading-[50px];
   }
   /* page titles */
   .h3 {

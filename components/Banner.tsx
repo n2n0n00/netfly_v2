@@ -61,7 +61,7 @@ const Banner = async ({ stylesOuter, stylesInner, category }: any) => {
                   img={calendar}
                   prop={
                     category === "tv"
-                      ? trendingTV.release_date
+                      ? trendingTV.first_air_date
                       : trendingMovie.release_date
                   }
                 />
