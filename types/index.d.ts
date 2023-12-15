@@ -1,3 +1,4 @@
+import { Genre } from "@/lib/utils";
 import Slider, { Settings } from "@types/react-slick";
 
 declare module "react-slick" {
@@ -68,7 +69,7 @@ export interface IAPIDataCall {
   genres?: string[];
 }
 
-export interface IAPIDataCall2 {
+export interface IMovieDetailsPage {
   carouselItems?: {
     poster_path?: string;
     title?: string;
@@ -83,4 +84,26 @@ export interface IAPIDataCall2 {
     release_date?: string;
   };
   genres?: string[];
+}
+
+export interface IMovieDetailsPageSynopsis {
+  carouselItems?: {
+    poster_path?: string;
+    title?: string;
+    name?: string;
+    vote_count?: number;
+    vote_average?: number;
+    overview?: string;
+    id?: string;
+    status?: string;
+    original_language?: string;
+    runtime?: number;
+    release_date?: string;
+    genres?: Genre[];
+  };
+  actors?: {
+    name?: string;
+    profile_path?: string;
+    character?: string;
+  }[];
 }

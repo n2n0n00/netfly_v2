@@ -4,9 +4,9 @@ import Navbar from "@/components/navigation/Navbar";
 import { calendar, clock, star, subtitles } from "@/public";
 import { MovieMetrics } from "./HeroSection";
 
-import { IAPIDataCall2 } from "@/types";
+import { IMovieDetailsPage } from "@/types";
 
-const DetailsHero = ({ carouselItems }: IAPIDataCall2) => {
+const DetailsHero = ({ carouselItems }: IMovieDetailsPage) => {
   return (
     <>
       <section

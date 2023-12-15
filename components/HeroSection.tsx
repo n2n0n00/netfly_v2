@@ -40,11 +40,13 @@ const HeroSection = async ({ carouselItems, genres }: IAPIDataCall) => {
                 </div>
 
                 {/* title of the movie will go here */}
-                <div className="m-3 flex-start md:mx-20">
-                  <h2 className="h2 text-white font-redHatDisplay">
-                    {item?.title}
-                  </h2>
-                </div>
+                <Link href={`movies/${item.id}`}>
+                  <div className="m-3 flex-start md:mx-20">
+                    <h2 className="h2 text-white font-redHatDisplay">
+                      {item?.title}
+                    </h2>
+                  </div>
+                </Link>
 
                 {/* genres of the movie will go here */}
                 <div className="flex-start flex-row gap-5 m-3 md:mx-20">

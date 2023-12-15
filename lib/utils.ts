@@ -1,5 +1,4 @@
 import { type ClassValue, clsx } from "clsx";
-import { usePathname } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -74,13 +73,24 @@ export async function getGenreList() {
 }
 
 export interface Genre {
-  id: number;
-  name: string;
+  id?: number;
+  name?: string;
 }
 
 export interface GenreData {
   genres: Genre[];
 }
+
+export const extractGenreNames = (genres?: Genre[]): string => {
+  // Check if genres is undefined and provide a default value (empty array)
+  const genreNames: string[] =
+    genres?.map((genre: Genre) => genre.name || "") || [];
+
+  // Use the join function to concatenate the genre names into a single string
+  const result: string = genreNames.join(", ");
+
+  return result;
+};
 
 export function getGenreNames(
   genreData: GenreData,
@@ -283,6 +293,23 @@ export async function fetchSimilarMovieByID({ id }: movieIdProp) {
     const data = await response.json();
 
     const result = data.results;
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function fetchCreditsByMovieID({ id }: movieIdProp) {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.cast.slice(0, 5);
     console.log(result);
     return result;
 
