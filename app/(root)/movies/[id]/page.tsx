@@ -14,6 +14,7 @@ const Movies = async () => {
   const movieId = { id: parseInt(parts[parts.length - 1]) };
   const fetchedMovieDetails = await fetchMovieByID(movieId);
   const fetchedSimilarMovies = await fetchSimilarMovieByID(movieId);
+
   return (
     <div>
       <DetailsHero carouselItems={fetchedMovieDetails} />

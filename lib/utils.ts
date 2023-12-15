@@ -266,7 +266,6 @@ export async function fetchMovieByID({ id }: movieIdProp) {
     const data = await response.json();
 
     const result = data;
-    console.log(result);
     return result;
 
     //
@@ -291,20 +290,4 @@ export async function fetchSimilarMovieByID({ id }: movieIdProp) {
   } catch (error) {
     console.log(error);
   }
-}
-
-export async function getServerSideProps() {
-  const searchParams = window.location.href;
-  const parts = searchParams.split("/");
-  const movieId = { id: parseInt(parts[parts.length - 1]) };
-
-  const fetchedSimilarMovies = await fetchSimilarMovieByID(movieId);
-  const fetchedMovieDetails = await fetchMovieByID(movieId);
-
-  return {
-    props: {
-      fetchedMovieDetails,
-      fetchedSimilarMovies,
-    },
-  };
 }
