@@ -50,6 +50,7 @@ export interface IShowCase {
     vote_count?: number;
     vote_average?: number;
     id: number;
+    genres?: { id?: number; name?: string }[];
   }[];
 }
 

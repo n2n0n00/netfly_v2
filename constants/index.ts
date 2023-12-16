@@ -1,5 +1,6 @@
 import { Pages, NavLink, Icons, CItems, IShowCase } from "@/types";
 import { calendar, star, clock, subtitles } from "../public/index";
+import { genreIdProp } from "@/lib/utils";
 
 export const NavLinks: NavLink[] = [
   {
@@ -207,4 +208,26 @@ export const detailsData = [
     label: "Year",
     value: "2021",
   },
+];
+
+export const genresLibrary: genreIdProp[] = [
+  { id: 28, name: [{ title_1: "Action", title_2: "" }] },
+  { id: 12, name: [{ title_1: "Adventure", title_2: "" }] },
+  { id: 16, name: [{ title_1: "Animation", title_2: "" }] },
+  { id: 35, name: [{ title_1: "Comedy", title_2: "" }] },
+  { id: 80, name: [{ title_1: "Crime", title_2: "" }] },
+  { id: 99, name: [{ title_1: "Documentary", title_2: "" }] },
+  { id: 18, name: [{ title_1: "Drama", title_2: "" }] },
+  { id: 10751, name: [{ title_1: "Family", title_2: "" }] },
+  { id: 14, name: [{ title_1: "Fantasy", title_2: "" }] },
+  { id: 36, name: [{ title_1: "History", title_2: "" }] },
+  { id: 27, name: [{ title_1: "Horror", title_2: "" }] },
+  { id: 10402, name: [{ title_1: "Music", title_2: "" }] },
+  { id: 9648, name: [{ title_1: "Mystery", title_2: "" }] },
+  { id: 10749, name: [{ title_1: "Romance", title_2: "" }] },
+  { id: 878, name: [{ title_1: "Science ", title_2: "Fiction" }] },
+  { id: 10770, name: [{ title_1: "TV ", title_2: "Movie" }] },
+  { id: 53, name: [{ title_1: "Thriller", title_2: "" }] },
+  { id: 10752, name: [{ title_1: "War", title_2: "" }] },
+  { id: 37, name: [{ title_1: "Western", title_2: "" }] },
 ];
