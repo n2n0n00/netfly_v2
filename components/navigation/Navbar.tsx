@@ -3,15 +3,22 @@ import Link from "next/link";
 import React from "react";
 import { NavLinks } from "@/constants";
 import MobileNav from "./MobileNav";
+import { NavColor } from "@/types";
 
-const Navbar = () => {
+const Navbar = ({ bgColor }: NavColor) => {
   return (
     <nav>
       <div className="flex flex-row justify-around items-center">
         <Link href="/">
-          <h1 className="logo font-brunoAce my-5">
-            Net<span className="red_text">Fly</span>
-          </h1>
+          {bgColor === "dark" ? (
+            <h1 className="logo font-brunoAce my-5 text-white">
+              Net<span className="red_text">Fly</span>
+            </h1>
+          ) : (
+            <h1 className="logo font-brunoAce my-5">
+              Net<span className="red_text">Fly</span>
+            </h1>
+          )}
         </Link>
         <div className="flex flex-row justify-between gap-10 my-5">
           {NavLinks.map((item) => (
@@ -20,7 +27,11 @@ const Navbar = () => {
               key={item.label}
               className="flex max-md:hidden"
             >
-              <p className="p2 text-black font-bold">{item.label}</p>
+              {bgColor === "dark" ? (
+                <p className="p2 text-white font-bold">{item.label}</p>
+              ) : (
+                <p className="p2 text-black font-bold">{item.label}</p>
+              )}
             </Link>
           ))}
           <div className="flex md:hidden">
@@ -30,7 +41,11 @@ const Navbar = () => {
 
         <div className="flex max-md:hidden my-5">
           {/* global search to be implemented later on */}
-          <CiSearch size="25px" color="black" />
+          {bgColor === "dark" ? (
+            <CiSearch size="25px" color="white" />
+          ) : (
+            <CiSearch size="25px" color="black" />
+          )}
         </div>
       </div>
     </nav>

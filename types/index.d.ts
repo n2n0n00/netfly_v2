@@ -1,14 +1,13 @@
 import { Genre } from "@/lib/utils";
-import Slider, { Settings } from "@types/react-slick";
-
-declare module "react-slick" {
-  export { Slider, Settings };
-}
 
 export interface NavLink {
   imgURL?: string;
   route: string;
   label: string;
+}
+
+export interface NavColor {
+  bgColor?: string;
 }
 
 export interface Pages {

@@ -6,9 +6,7 @@ const Movies = () => {
   return (
     <>
       <div>
-        <div className="bg-white opacity-50">
-          <Navbar />
-        </div>
+        <Navbar bgColor="dark" />
         <MovieLists />
       </div>
     </>
