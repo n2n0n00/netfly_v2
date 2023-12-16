@@ -1,4 +1,3 @@
-// useMoviesData.js
 import { useState, useEffect } from "react";
 import { genresLibrary } from "@/constants";
 import { fetchMoviesByGenre } from "@/lib/utils";

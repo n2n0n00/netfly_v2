@@ -376,8 +376,6 @@ export async function fetchCreditsByTVShowID({ id }: movieIdProp) {
 
 // FETCHING MOVIES BY GENRE:
 
-// get movies by genre:
-
 export interface genreIdProp {
   id: number;
   name?: {
@@ -405,6 +403,39 @@ export async function fetchMoviesByGenre({ id }: genreIdProp) {
 
     const response = await fetch(
       `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${id}`,
+      options
+    );
+
+    const data = await response.json();
+
+    const result = data.results;
+    return result;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+}
+
+// FETCHING TV BY GENRE:
+export async function fetchTvShowsByGenre({ id }: genreIdProp) {
+  try {
+    // Check if genres is defined before accessing its properties
+    if (!id) {
+      console.error("Genres is undefined");
+      return [];
+    }
+
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MmY5ZTQ1NzA4ODZlMzRmMTQ4N2ViOTcxNTRiYTVhMyIsInN1YiI6IjY1NmY4ZDg5NDZlNzVmMDBlM2QzMWJlMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r3uAYVZT10bqG-bT1l3CEWfuRM0KZWKcfPGdyMQ9_xk",
+      },
+    };
+
+    const response = await fetch(
+      `https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${id}`,
       options
     );
 

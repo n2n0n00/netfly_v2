@@ -231,3 +231,70 @@ export const genresLibrary: genreIdProp[] = [
   { id: 10752, name: [{ title_1: "War", title_2: "" }] },
   { id: 37, name: [{ title_1: "Western", title_2: "" }] },
 ];
+
+export const genresTvLibrary: genreIdProp[] = [
+  {
+    id: 10759,
+    name: [{ title_1: "Action &", title_2: "Adventure" }],
+  },
+  {
+    id: 16,
+    name: [{ title_1: "Animation", title_2: "" }],
+  },
+  {
+    id: 35,
+    name: [{ title_1: "Comedy", title_2: "" }],
+  },
+  {
+    id: 80,
+    name: [{ title_1: "Crime", title_2: "" }],
+  },
+  {
+    id: 99,
+    name: [{ title_1: "Documentary", title_2: "" }],
+  },
+  {
+    id: 18,
+    name: [{ title_1: "Drama", title_2: "" }],
+  },
+  {
+    id: 10751,
+    name: [{ title_1: "Family", title_2: "" }],
+  },
+  {
+    id: 10762,
+    name: [{ title_1: "Kids", title_2: "" }],
+  },
+  {
+    id: 9648,
+    name: [{ title_1: "Mystery", title_2: "" }],
+  },
+  {
+    id: 10763,
+    name: [{ title_1: "News", title_2: "" }],
+  },
+  {
+    id: 10764,
+    name: [{ title_1: "Reality", title_2: "" }],
+  },
+  {
+    id: 10765,
+    name: [{ title_1: "Sci-Fi &", title_2: "Fantasy" }],
+  },
+  {
+    id: 10766,
+    name: [{ title_1: "Soap", title_2: "" }],
+  },
+  {
+    id: 10767,
+    name: [{ title_1: "Talk", title_2: "" }],
+  },
+  {
+    id: 10768,
+    name: [{ title_1: "War &", title_2: "Politics" }],
+  },
+  {
+    id: 37,
+    name: [{ title_1: "Western", title_2: "" }],
+  },
+];

@@ -1,18 +1,19 @@
 "use client";
-import { genresLibrary } from "@/constants";
-import useMoviesData from "@/lib/movieFunctions";
+import { genresTvLibrary } from "@/constants";
 import React from "react";
 import Showcase from "./Showcase";
+import useTvShowsData from "@/lib/tvFunctions";
 
-const MovieLists = () => {
-  const allFetchedData = useMoviesData();
+const TvLists = () => {
+  const allFetchedData = useTvShowsData();
 
   return (
     <div>
-      {genresLibrary.map((item, index) => (
+      {genresTvLibrary.map((item, index) => (
         <Showcase
           key={item.id}
           data={item.name}
+          category="tv"
           carouselItems={allFetchedData[index]}
         />
       ))}
@@ -20,4 +21,4 @@ const MovieLists = () => {
   );
 };
 
-export default MovieLists;
+export default TvLists;
