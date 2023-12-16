@@ -89,4 +89,24 @@ html {
   .border_radius {
     border-radius: 10px 0px;
   }
+
+  .contact_bg_gradient {
+    background: rgb(23, 38, 57);
+    background: -moz-radial-gradient(
+      circle,
+      rgba(23, 38, 57, 1) 0%,
+      rgba(152, 0, 31, 1) 100%
+    );
+    background: -webkit-radial-gradient(
+      circle,
+      rgba(23, 38, 57, 1) 0%,
+      rgba(152, 0, 31, 1) 100%
+    );
+    background: radial-gradient(
+      circle,
+      rgba(23, 38, 57, 1) 0%,
+      rgba(152, 0, 31, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#172639",endColorstr="#98001f",GradientType=1);
+  }
 }
