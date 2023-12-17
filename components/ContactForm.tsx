@@ -53,7 +53,8 @@ export const ContactForm: React.FC<ContactFormProps> = () => {
         <textarea
           name="message"
           placeholder="Write Your Message Here..."
-          className="w-full dark_blue border-[0.5px]"
+          className="w-full dark_blue border-[0.5px] text-white"
+          rows={5}
         />
       </div>
       <div className="flex-center flex-row w-full md:flex-start mt-5">
