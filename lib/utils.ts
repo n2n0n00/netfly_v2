@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const tmdbApiKey = process.env.TMDB_KEY;
+const tmdbApiKey = process.env.NEXT_PUBLIC_TMDB_KEY;
 
 export interface MovieProps {
   country?: string | null;
