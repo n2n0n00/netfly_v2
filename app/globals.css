@@ -91,22 +91,22 @@ html {
   }
 
   .contact_bg_gradient {
-    background: rgb(23, 38, 57);
+    background: rgb(69, 38, 38);
     background: -moz-radial-gradient(
       circle,
-      rgba(23, 38, 57, 1) 0%,
-      rgba(152, 0, 31, 1) 100%
+      rgba(69, 38, 38, 1) 0%,
+      rgba(23, 38, 57, 1) 100%
     );
     background: -webkit-radial-gradient(
       circle,
-      rgba(23, 38, 57, 1) 0%,
-      rgba(152, 0, 31, 1) 100%
+      rgba(69, 38, 38, 1) 0%,
+      rgba(23, 38, 57, 1) 100%
     );
     background: radial-gradient(
       circle,
-      rgba(23, 38, 57, 1) 0%,
-      rgba(152, 0, 31, 1) 100%
+      rgba(69, 38, 38, 1) 0%,
+      rgba(23, 38, 57, 1) 100%
     );
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#172639",endColorstr="#98001f",GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#452626",endColorstr="#172639",GradientType=1);
   }
 }

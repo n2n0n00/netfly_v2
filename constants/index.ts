@@ -1,5 +1,13 @@
 import { Pages, NavLink, Icons, CItems, IShowCase } from "@/types";
-import { calendar, star, clock, subtitles } from "../public/index";
+import {
+  calendar,
+  subtitles,
+  star,
+  clock,
+  mail,
+  location,
+  phone,
+} from "../public/index";
 import { genreIdProp } from "@/lib/utils";
 
 export const NavLinks: NavLink[] = [
@@ -296,5 +304,23 @@ export const genresTvLibrary: genreIdProp[] = [
   {
     id: 37,
     name: [{ title_1: "Western", title_2: "" }],
+  },
+];
+
+export const contactDetails = [
+  {
+    img: mail,
+    title: "Email",
+    subtitle: "support@netfly.com",
+  },
+  {
+    img: phone,
+    title: "Phone",
+    subtitle: "000-000-0000",
+  },
+  {
+    img: location,
+    title: "Headquarters",
+    subtitle: "120 La la land, Los Gatos, United Lands",
   },
 ];
