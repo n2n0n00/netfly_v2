@@ -38,7 +38,7 @@ export const ContactForm: React.FC<ContactFormProps> = () => {
           type="text"
           name="user_name"
           placeholder="Name"
-          className="w-full dark_blue border-[0.5px]"
+          className="w-full dark_blue border-[0.5px] rounded-md p1"
         />
       </div>
       <div className="flex-start flex-col w-full h-full">
@@ -46,24 +46,24 @@ export const ContactForm: React.FC<ContactFormProps> = () => {
           type="email"
           name="user_email"
           placeholder="Email"
-          className="w-full dark_blue border-[0.5px]"
+          className="w-full dark_blue border-[0.5px] rounded-md p1"
         />
       </div>
       <div className="flex-start flex-col w-full h-full">
         <textarea
           name="message"
           placeholder="Write Your Message Here..."
-          className="w-full dark_blue border-[0.5px] text-white"
+          className="w-full dark_blue border-[0.5px] text-white rounded-md p1"
           rows={5}
         />
       </div>
-      <div className="flex-center flex-row w-full md:flex-start mt-5">
+      <div className="flex-center flex-row w-full md:flex-start my-5">
         <div className="light_red rounded-md shadow-xl">
           {" "}
           <input
             type="submit"
             value="Send Message"
-            className="m-2 text-white cursor-pointer"
+            className="m-2 text-white cursor-pointer p1"
           />
         </div>
       </div>

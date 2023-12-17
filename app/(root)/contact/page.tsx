@@ -21,7 +21,7 @@ const Contact = () => {
   return (
     <div className="contact_bg_gradient">
       <Navbar bgColor="dark" />
-      <div className="m-3 md:m-20">
+      <div className="mx-3 mt-3 md:mx-20 md:mt-20">
         <div className="flex-center flex-col h-[80vh]">
           <p className="p3 text-white md:p2 text-center">Reach out!</p>
           <h2 className="md:h2 h3 font-redHatDisplay red_text text-center">
