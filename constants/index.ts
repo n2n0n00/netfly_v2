@@ -389,7 +389,7 @@ export const footerLinks: FooterLinks[] = [
     links: [
       {
         title: "Privacy Links",
-        url: "privacylinks",
+        url: "privacypolicy",
       },
       {
         title: "Cookie Policy",
