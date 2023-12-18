@@ -15,7 +15,7 @@ const Navbar = ({ bgColor }: NavColor) => {
               Net<span className="red_text">Fly</span>
             </h1>
           ) : (
-            <h1 className="logo font-brunoAce my-5">
+            <h1 className="logo font-brunoAce my-5 text-white">
               Net<span className="red_text">Fly</span>
             </h1>
           )}
@@ -30,7 +30,7 @@ const Navbar = ({ bgColor }: NavColor) => {
               {bgColor === "dark" ? (
                 <p className="p2 text-white font-bold">{item.label}</p>
               ) : (
-                <p className="p2 text-black font-bold">{item.label}</p>
+                <p className="p2 text-white font-bold">{item.label}</p>
               )}
             </Link>
           ))}
@@ -44,7 +44,7 @@ const Navbar = ({ bgColor }: NavColor) => {
           {bgColor === "dark" ? (
             <CiSearch size="25px" color="white" />
           ) : (
-            <CiSearch size="25px" color="black" />
+            <CiSearch size="25px" color="white" />
           )}
         </div>
       </div>
