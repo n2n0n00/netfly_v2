@@ -121,4 +121,5 @@ export interface FooterLinks {
     title: string;
     url: string;
   }[];
+  category?: string;
 }

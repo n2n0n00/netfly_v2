@@ -22,7 +22,7 @@ const Contact = () => {
     <div className="contact_bg_gradient">
       <Navbar bgColor="dark" />
       <div className="mx-3 mt-3 md:mx-20 md:mt-20">
-        <div className="flex-center flex-col h-[80vh]">
+        <div className="flex-center flex-col h-[50vh]">
           <p className="p3 text-white md:p2 text-center">Reach out!</p>
           <h2 className="md:h2 h3 font-redHatDisplay red_text text-center">
             Contact Us
@@ -40,7 +40,6 @@ const Contact = () => {
           <div className="flex-center flex-col gap-12 md:flex-start">
             <h3 className="text-white h3 font-redHatDisplay">Contact Info</h3>
             <div className="flex-center flex-col md:flex-start">
-              <h4 className="text-white h4 mb-10">NetFly</h4>
               {contactDetails.map((item) => (
                 <ContactInfo
                   img={item.img}

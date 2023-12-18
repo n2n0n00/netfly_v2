@@ -359,27 +359,28 @@ export const footerLinks: FooterLinks[] = [
     ],
   },
   {
+    category: "social",
     title: "Social Media",
     links: [
       {
         title: "Instagram",
-        url: "www.instagram.com",
+        url: "https://www.instagram.com",
       },
       {
         title: "X",
-        url: "www.x.com",
+        url: "https://www.x.com",
       },
       {
         title: "Meta",
-        url: "www.meta.com",
+        url: "https://www.meta.com",
       },
       {
         title: "Youtube",
-        url: "www.youtube.com",
+        url: "https://www.youtube.com",
       },
       {
         title: "LinkedIn",
-        url: "www.linkedin.com",
+        url: "https://www.linkedin.com",
       },
     ],
   },

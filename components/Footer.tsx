@@ -4,16 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const QuickLinks = ({ title, links }: FooterLinks) => (
+const QuickLinks = ({ title, links, category }: FooterLinks) => (
   <div className="flex-center flex-col md:flex-start">
     <p className="p2_bold text-white">{title}</p>
-    <div className="flex-center flex-col md:flex-start">
-      {links.map((item) => (
-        <Link key={item.title} href={item.url}>
-          <p className="p2 text-white opacity-50">{item.title}</p>
-        </Link>
-      ))}
-    </div>
+    {category === "social" ? (
+      <div className="flex-center flex-col md:flex-start">
+        {links.map((item) => (
+          <a key={item.title} target="_blank" href={item.url}>
+            <p className="p2 text-white opacity-50">{item.title}</p>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <div className="flex-center flex-col md:flex-start">
+        {links.map((item) => (
+          <Link key={item.title} href={item.url}>
+            <p className="p2 text-white opacity-50">{item.title}</p>
+          </Link>
+        ))}
+      </div>
+    )}
   </div>
 );
 
