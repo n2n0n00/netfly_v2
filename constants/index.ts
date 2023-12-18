@@ -1,4 +1,12 @@
-import { Pages, NavLink, Icons, CItems, IShowCase } from "@/types";
+import {
+  Pages,
+  NavLink,
+  Icons,
+  CItems,
+  IShowCase,
+  FooterLinks,
+  contactLinks,
+} from "@/types";
 import {
   calendar,
   subtitles,
@@ -7,6 +15,9 @@ import {
   mail,
   location,
   phone,
+  footermail,
+  footerphone,
+  footerlocation,
 } from "../public/index";
 import { genreIdProp } from "@/lib/utils";
 
@@ -322,5 +333,86 @@ export const contactDetails = [
     img: location,
     title: "Headquarters",
     subtitle: "120 La la land, Los Gatos, United Lands",
+  },
+];
+
+export const footerLinks: FooterLinks[] = [
+  {
+    title: "Quick Links",
+    links: [
+      {
+        title: "Home",
+        url: "/",
+      },
+      {
+        title: "Movies",
+        url: "movies",
+      },
+      {
+        title: "TV Shows",
+        url: "tvshows",
+      },
+      {
+        title: "Contact",
+        url: "contact",
+      },
+    ],
+  },
+  {
+    title: "Social Media",
+    links: [
+      {
+        title: "Instagram",
+        url: "www.instagram.com",
+      },
+      {
+        title: "X",
+        url: "www.x.com",
+      },
+      {
+        title: "Meta",
+        url: "www.meta.com",
+      },
+      {
+        title: "Youtube",
+        url: "www.youtube.com",
+      },
+      {
+        title: "LinkedIn",
+        url: "www.linkedin.com",
+      },
+    ],
+  },
+  {
+    title: "Policy Links",
+    links: [
+      {
+        title: "Privacy Links",
+        url: "privacylinks",
+      },
+      {
+        title: "Cookie Policy",
+        url: "cookiepolicy",
+      },
+      {
+        title: "Terms & Conditions",
+        url: "termsandconditions",
+      },
+    ],
+  },
+];
+
+export const footerContacts = [
+  {
+    img: footermail,
+    title: "support@netfly.com",
+  },
+  {
+    img: footerphone,
+    title: "000-000-0000",
+  },
+  {
+    img: footerlocation,
+    title: "120 La la land, Los Gatos, United Lands",
   },
 ];

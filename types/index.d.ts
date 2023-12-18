@@ -114,3 +114,11 @@ export interface IMovieDetailsPageSynopsis {
     character?: string;
   }[];
 }
+
+export interface FooterLinks {
+  title: string;
+  links: {
+    title: string;
+    url: string;
+  }[];
+}

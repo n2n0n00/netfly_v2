@@ -31,6 +31,10 @@
     @apply text-[2rem] font-normal leading-[34px];
   }
 
+  .p2_bold {
+    @apply text-[1.33rem] font-semibold leading-[26px];
+  }
+
   .p2 {
     @apply text-[1.33rem] font-normal leading-[26px];
   }
