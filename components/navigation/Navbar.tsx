@@ -5,8 +5,6 @@ import { NavLinks } from "@/constants";
 import MobileNav from "./MobileNav";
 import { NavColor } from "@/types";
 import SearchBar from "./SearchBar";
-// import { fetchSearchBarInput } from "@/lib/utils";
-import axios from "axios";
 import { fetchSearchBarInput } from "@/lib/utils";
 
 interface SearchResult {

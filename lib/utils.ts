@@ -467,3 +467,5 @@ export async function fetchSearchBarInput({ searchQuery }: any) {
     console.log(error);
   }
 }
+
+// URL STATE MANAGEMENT FOR SEARCH
