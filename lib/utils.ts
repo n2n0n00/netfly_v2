@@ -448,3 +448,22 @@ export async function fetchTvShowsByGenre({ id }: genreIdProp) {
     return [];
   }
 }
+
+// FETCH QUERY (SEARCHBAR)
+
+export async function fetchSearchBarInput({ searchQuery }: any) {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/search/multi?query=${searchQuery}&include_adult=false&language=en-US&page=1&api_key=${tmdbApiKey}`
+    );
+
+    const data = await response.json();
+
+    const result = data.results;
+    return result;
+
+    //
+  } catch (error) {
+    console.log(error);
+  }
+}
