@@ -12,6 +12,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
 import { menubar } from "@/public";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import SearchBar from "./SearchBar";
 
 const MobileNav = () => {
   return (
@@ -21,7 +24,7 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>
+          <SheetTitle className="flex-center flex-col w-full">
             <div className="flex w-full justify-center">
               <Link href="/">
                 <h1 className="logo font-brunoAce text-white">
@@ -29,12 +32,9 @@ const MobileNav = () => {
                 </h1>
               </Link>
             </div>
-            <div className="mt-5 w-full dark_blue_search rounded-xl h-[35px] flex flex-row items-center">
-              <div className="m-5">
-                <CiSearch size="25px" color="white" />
-              </div>
-
-              {/** add here the search bar */}
+            <div className="mt-5 w-full flex-center cursor-pointer">
+              {" "}
+              <SearchBar styles={"w-full h-[35px]"} />
             </div>
           </SheetTitle>
           <SheetDescription>

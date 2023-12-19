@@ -4,6 +4,7 @@ import React from "react";
 import { NavLinks } from "@/constants";
 import MobileNav from "./MobileNav";
 import { NavColor } from "@/types";
+import SearchBar from "./SearchBar";
 
 const Navbar = ({ bgColor }: NavColor) => {
   return (
@@ -41,11 +42,8 @@ const Navbar = ({ bgColor }: NavColor) => {
 
         <div className="flex max-md:hidden my-5">
           {/* global search to be implemented later on */}
-          {bgColor === "dark" ? (
-            <CiSearch size="25px" color="white" />
-          ) : (
-            <CiSearch size="25px" color="white" />
-          )}
+
+          <SearchBar styles={"w-[300px] h-[38px]"} />
         </div>
       </div>
     </nav>
