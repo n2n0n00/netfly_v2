@@ -14,6 +14,7 @@ interface SearchResult {
   title: string;
   name: string;
   overview: string;
+  media_type: string;
   // Add other properties based on the API response
 }
 
@@ -45,6 +46,17 @@ const Navbar = ({ bgColor }: NavColor) => {
     // Call fetchData when searchQuery changes
     fetchData();
   }, [searchQuery]);
+
+  const renderLink = (media_type: string, id: number) => {
+    switch (media_type) {
+      case "tv":
+        return `/tvshows/${id}`;
+      case "movie":
+        return `/movies/${id}`;
+      default:
+        return "/";
+    }
+  };
 
   return (
     <nav>
@@ -89,10 +101,10 @@ const Navbar = ({ bgColor }: NavColor) => {
           />
           {loading ? <p>Loading...</p> : null}
           {searchResults.map((item) => (
-            <div key={item.id}>
+            <Link href={renderLink(item.media_type, item.id)} key={item.id}>
               <h2>{item.title || item.name}</h2>
               <p>{item.overview}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
