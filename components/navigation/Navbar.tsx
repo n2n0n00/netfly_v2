@@ -9,7 +9,7 @@ import FunctionalSearchBar from "./FunctionalSearchBar";
 const Navbar = ({ bgColor }: NavColor) => {
   return (
     <nav>
-      <div className="relative flex flex-row justify-around items-center">
+      <div className="relative flex flex-row justify-between mx-10 lg:justify-around items-center">
         <Link href="/">
           {bgColor === "dark" ? (
             <h1 className="logo font-brunoAce my-5 text-white">
