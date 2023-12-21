@@ -5,6 +5,7 @@ import { calendar, clock, star, subtitles } from "@/public";
 import { MovieMetrics } from "./HeroSection";
 
 import { IMovieDetailsPage } from "@/types";
+import { getYearFromDate } from "@/lib/utils";
 
 const DetailsHero = ({ carouselItems, category }: IMovieDetailsPage) => {
   return (
@@ -40,8 +41,8 @@ const DetailsHero = ({ carouselItems, category }: IMovieDetailsPage) => {
                   img={calendar}
                   prop={
                     category === "tv"
-                      ? carouselItems?.first_air_date
-                      : carouselItems?.release_date
+                      ? getYearFromDate(carouselItems?.first_air_date)
+                      : getYearFromDate(carouselItems?.release_date)
                   }
                 />
                 <MovieMetrics

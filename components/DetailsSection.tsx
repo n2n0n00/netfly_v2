@@ -1,4 +1,4 @@
-import { extractGenreNames } from "@/lib/utils";
+import { extractGenreNames, getYearFromDate } from "@/lib/utils";
 import { IMovieDetailsPageSynopsis } from "@/types";
 import Image from "next/image";
 import React from "react";
@@ -73,7 +73,7 @@ const DetailsSection = ({
               <AboutData label={"Duration"} value={carouselItems?.runtime} />
               <AboutData
                 label={"Released On"}
-                value={carouselItems?.release_date}
+                value={getYearFromDate(carouselItems?.release_date)}
               />
             </div>
           )}

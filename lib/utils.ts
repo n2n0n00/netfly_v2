@@ -468,4 +468,17 @@ export async function fetchSearchBarInput({ searchQuery }: any) {
   }
 }
 
-// URL STATE MANAGEMENT FOR SEARCH
+// YEAR EXTRACTION FUNCTION
+export function getYearFromDate(dateString: any): number | null {
+  const date = new Date(dateString);
+
+  // Check if the date is valid
+  if (isNaN(date.getTime())) {
+    console.error("Invalid date format");
+    return null;
+  }
+
+  // Extract the year
+  const year = date.getFullYear();
+  return year;
+}

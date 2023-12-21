@@ -74,4 +74,13 @@
   .red_btn_sm {
     @apply px-[4px] py-[16px] flex justify-center gap-[10px] light_red border-[5px];
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }

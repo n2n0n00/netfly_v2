@@ -1,27 +1,35 @@
+/* eslint-disable react/react-in-jsx-scope */
 "use client";
+import React, { useEffect, useState, useRef } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
 import { NavLinks } from "@/constants";
 import MobileNav from "./MobileNav";
 import { NavColor } from "@/types";
 import SearchBar from "./SearchBar";
-import { fetchSearchBarInput } from "@/lib/utils";
+import { fetchSearchBarInput, getYearFromDate } from "@/lib/utils";
+import Image from "next/image";
 
 interface SearchResult {
   id: number;
   title: string;
   name: string;
-  overview: string;
   media_type: string;
-  // Add other properties based on the API response
+  poster_path: string;
+  vote_average: number;
+  release_date: string;
 }
 
 const Navbar = ({ bgColor }: NavColor) => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [dialogVisible, setDialogVisible] = useState<boolean>(false);
+  const searchContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    let delayTimer: NodeJS.Timeout;
+
     const fetchData = async () => {
       try {
         if (searchQuery.trim() === "") {
@@ -41,8 +49,18 @@ const Navbar = ({ bgColor }: NavColor) => {
       }
     };
 
-    // Call fetchData when searchQuery changes
-    fetchData();
+    const delayedFetch = () => {
+      clearTimeout(delayTimer);
+      delayTimer = setTimeout(() => {
+        fetchData();
+      }, 800); // 0.8 sec delay
+    };
+
+    delayedFetch();
+
+    return () => {
+      clearTimeout(delayTimer);
+    };
   }, [searchQuery]);
 
   const renderLink = (media_type: string, id: number) => {
@@ -56,9 +74,55 @@ const Navbar = ({ bgColor }: NavColor) => {
     }
   };
 
+  useEffect(() => {
+    const handleOutsideClick = (e: any) => {
+      if (
+        searchContainerRef.current &&
+        e.target &&
+        !searchContainerRef.current.contains(e.target)
+      ) {
+        setDialogVisible(false);
+        setSearchQuery("");
+      }
+    };
+
+    setDialogVisible(false);
+
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
+
+  const searchResultsBox =
+    searchResults.length > 0 && searchQuery.trim() !== "" ? (
+      <div className="absolute top-14 left-0 w-full p-4  shadow-md z-50 h-[400px] overflow-y-scroll dark_blue_search no-scrollbar">
+        {searchResults.map((item) => (
+          <Link href={renderLink(item.media_type, item.id)} key={item.id}>
+            <div className="flex-start flex-row gap-5 mb-5">
+              <Image
+                width={70}
+                height={90}
+                src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
+                alt={item.title}
+              />
+              <div className="flex-start flex-col">
+                <p className="p1 text-white">{item.title || item.name}</p>
+                <p className="p2 text-white">
+                  {getYearFromDate(item.release_date)}
+                </p>
+                <p className="p2 text-white">{item.vote_average}/10</p>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    ) : null;
+
   return (
     <nav>
-      <div className="flex flex-row justify-around items-center">
+      <div className="relative flex flex-row justify-around items-center">
         <Link href="/">
           {bgColor === "dark" ? (
             <h1 className="logo font-brunoAce my-5 text-white">
@@ -89,21 +153,22 @@ const Navbar = ({ bgColor }: NavColor) => {
           </div>
         </div>
 
-        <div className="flex max-md:hidden my-5">
+        <div
+          ref={searchContainerRef}
+          className="relative flex max-md:hidden my-5 flex-col"
+        >
           {/* global search to be implemented later on */}
-
           <SearchBar
             styles={"w-[300px] h-[38px]"}
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
           />
-          {loading ? <p>Loading...</p> : null}
-          {searchResults.map((item) => (
-            <Link href={renderLink(item.media_type, item.id)} key={item.id}>
-              <h2>{item.title || item.name}</h2>
-              <p>{item.overview}</p>
-            </Link>
-          ))}
+          {loading ? (
+            <p>Loading...</p>
+          ) : (
+            // Conditionally render the dialog box
+            searchResultsBox
+          )}
         </div>
       </div>
     </nav>

@@ -7,6 +7,7 @@ import {
   fetchTrendingTV,
   getGenreList,
   getGenreNames,
+  getYearFromDate,
 } from "@/lib/utils";
 import Link from "next/link";
 
@@ -61,8 +62,8 @@ const Banner = async ({ stylesOuter, stylesInner, category }: any) => {
                   img={calendar}
                   prop={
                     category === "tv"
-                      ? trendingTV.first_air_date
-                      : trendingMovie.release_date
+                      ? getYearFromDate(trendingTV.first_air_date)
+                      : getYearFromDate(trendingMovie.release_date)
                   }
                 />
                 <MovieMetrics
