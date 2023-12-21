@@ -36,9 +36,7 @@ const MobileNav = () => {
             <FunctionalSearchBar
               styles={"w-full h-[35px]"}
               viewport="mobile"
-              resultsBox={
-                "top-[20%] md:top-[15%] md:h-[400px] w-[80%] h-[300px]"
-              }
+              resultsBox={"top-[20%] md:h-[400px] w-[80%] h-[300px]"}
             />
           </SheetTitle>
           <SheetDescription>

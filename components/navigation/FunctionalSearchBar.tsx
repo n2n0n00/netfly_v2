@@ -93,7 +93,7 @@ const FunctionalSearchBar = ({ styles, viewport, resultsBox }: any) => {
   const searchResultsBox =
     searchResults.length > 0 && searchQuery.trim() !== "" ? (
       <div
-        className={`absolute p-4 shadow-md z-50 overflow-y-scroll dark_blue_search no-scrollbar ${resultsBox}`}
+        className={`absolute p-4 shadow-md z-50 overflow-y-scroll dark_blue_search no-scrollbar rounded-lg ${resultsBox}`}
       >
         {searchResults.map((item) => (
           <Link href={renderLink(item.media_type, item.id)} key={item.id}>
