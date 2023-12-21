@@ -15,6 +15,7 @@ import { menubar } from "@/public";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import SearchBar from "./SearchBar";
+import FunctionalSearchBar from "./FunctionalSearchBar";
 
 const MobileNav = () => {
   return (
@@ -32,10 +33,11 @@ const MobileNav = () => {
                 </h1>
               </Link>
             </div>
-            <div className="mt-5 w-full flex-center cursor-pointer">
-              {" "}
-              <SearchBar styles={"w-full h-[35px]"} />
-            </div>
+            <FunctionalSearchBar
+              styles={"w-full h-[35px]"}
+              viewport="mobile"
+              resultsBox={"top-[20%] md:top-[10%] w-[80%] h-[300px]"}
+            />
           </SheetTitle>
           <SheetDescription>
             <div className="flex flex-col justify-between gap-10 items-center mt-10">
