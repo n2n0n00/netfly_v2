@@ -115,7 +115,7 @@ const Banner = async ({ stylesOuter, stylesInner, category }: any) => {
                   : trendingMovie.overview}
               </p>
               <div className="red_btn mb-20">
-                <p className="p2 text-white">Stream Now</p>
+                <p className="p2 text-white">Find Out!</p>
               </div>
             </div>
           </div>

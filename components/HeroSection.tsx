@@ -69,7 +69,7 @@ const HeroSection = async ({ carouselItems, genres }: IAPIDataCall) => {
                 </p>
                 <Link href={`movies/${item.id}`}>
                   <div className="red_btn mb-20">
-                    <p className="p2 text-white">Stream Now</p>
+                    <p className="p2 text-white">Find Out!</p>
                   </div>
                 </Link>
               </div>

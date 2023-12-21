@@ -61,7 +61,7 @@ const DetailsHero = ({ carouselItems, category }: IMovieDetailsPage) => {
             {/* description of the movie will go here */}
             <div className="flex-start flex-col m-3 md:mx-20">
               <div className="red_btn mb-20">
-                <p className="p2 text-white">Stream Now</p>
+                <p className="p2 text-white">Scroll Down For More Info</p>
               </div>
             </div>
           </div>
