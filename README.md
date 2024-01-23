@@ -28,6 +28,8 @@ Netfilm is a web application built with Next.js, TypeScript, and powered by data
 - [TypeScript](https://www.typescriptlang.org/)
 - [The Movie Database (TMDb) API](https://www.themoviedb.org/documentation/api)
 - [EmailJS](https://www.emailjs.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
   
 ![qw](https://github.com/n2n0n00/netfly_v2/assets/40828429/6b157bd0-57b1-482b-a440-2370e8901416)
 
