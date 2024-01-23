@@ -1,12 +1,4 @@
-import {
-  Pages,
-  NavLink,
-  Icons,
-  CItems,
-  IShowCase,
-  FooterLinks,
-  contactLinks,
-} from "@/types";
+import { Pages, NavLink, Icons, CItems, IShowCase, FooterLinks } from "@/types";
 import {
   calendar,
   subtitles,
