@@ -6,12 +6,12 @@
 
 html {
   font-size: 12px;
-  @apply font-inter;
+  font-family: "Inter", sans-serif;
 }
 
 :root {
   overflow-x: hidden;
-  @apply font-inter;
+  font-family: "Inter", sans-serif;
 }
 
 @layer utilities {
