@@ -1,6 +1,6 @@
-# Netfilm - A Netflix Lookalike Movie and Series Catalogue
+# Netfly - A Netflix Lookalike Movie and Series Catalogue
 
-Netfilm is a web application built with Next.js, TypeScript, and powered by data from The Movie Database (TMDb). It aims to provide users with a Netflix-like experience for browsing and discovering movies and TV series.
+Netfly is a web application built with Next.js, TypeScript, and powered by data from The Movie Database (TMDb). It aims to provide users with a Netflix-like experience for browsing and discovering movies and TV series.
 
 ![1](https://github.com/n2n0n00/netfly_v2/assets/40828429/5bd9c0b0-7b6a-4cba-b24b-9dd7adc9fd4b)
 
